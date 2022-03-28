@@ -1,3 +1,27 @@
 .row {
     justify-content: space-around;
+    padding: 50px 20px;
+}
+
+h2 {
+    font-size: 30px;
+    text-align: center;
+    padding: 70px 50px;
+}
+
+.card-body {
+text-align: center!important;
+align-items: baseline;
+padding: 15px 15px;
+}
+
+.card  {
+    padding: 25px 25px;
+    text-align: center;
+}
+
+.imgtarjeta {
+   width: 180px;
+   height: 180px;
+   margin: auto;
 }
