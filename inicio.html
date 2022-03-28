@@ -13,7 +13,7 @@
 <body>
 
     <header class="sticky-top">
-        <nav class="navbar navbar-expand-lg piedepagina">
+        <nav class="navbar navbar-expand-lg navbar-dark piedepagina">
             <div class="container-fluid">
               <a class="navbar-brand" href="inicio.html"><img src="img/logo.PNG" alt=""></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,29 +22,21 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" aria-current="page" href="#">Inicio</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="clientes.html">clientes</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Dropdown
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
+                    <a class="nav-link" href="clientes.html">Clientes</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link disabled">Disabled</a>
+                    <a class="nav-link" href="#marcas">Marcas</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#productos">Productos</a>
                   </li>
                 </ul>
                 <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
+                  <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Buscar</button>
                 </form>
               </div>
             </div>
@@ -78,7 +70,10 @@
         </button>
       </div>
 
-      <main class="producto">
+
+      <!--Producto: todo para tu PC-->
+      
+      <main class="producto" id="productos">
         <h3 class="producto__subtitle">Arma tu PC o actualízalo con los mejores componentes</h3>
         <h1 class="producto__maintitle">Todo para tu PC</h1>
         
@@ -86,18 +81,20 @@
             <div class="row d-flex">
     
               
-              <div class="col-xs-12 col-sm-8">
-                <div class="ubi">
+              <div class="col-xs-12 col-md-5 col-lg-7">
+                <div class="disco-duro">
                   <img src="img/disco_duro.PNG" alt="">
                 </div>
               </div>
     
-              <div class="col-xs-12 col-sm-4">
-                <h2>PLACA MADRE GIGABYTE GA-H310M H 2.0, H310, LGA 1151-V2, 4X SATA 6GB/S, MICRO-ATX</h2>
-                <h4>PRECIO $79.900</h4>
-                <p>
+              <div class="col-xs-12 col-md 7 col-lg-5">
+              <div class="descripcion">
+                <h2 class="descripcion__producto">PLACA MADRE GIGABYTE GA-H310M H 2.0, H310, LGA 1151-V2, 4X SATA 6GB/S, MICRO-ATX</h2>
+                <h4 class="descripcion__precio">PRECIO $79.900</h4>
+                <p class="descripcion__texto">
                   Placa madre Intel H310 Ultra Durable con GIGABYTE 8118 Gaming LAN, resistencia anti-azufre, Smart Fan 5, listo para CEC 2019. Descripción Admite procesadores Intel® Core ™ de novena y octava...
                 </p>
+              </div>
                 <button type="button" class="btn btn-dark" data-bs-toggle="tooltip" data-bs-placement="right" title="ver detalles del producto">
                   Ver más
                 </button>
@@ -106,6 +103,9 @@
             </div>      
           </div>
       </main>
+
+
+      <!--Marcas-->
 
       <section id="marcas">
         <h2 class="marcas__title">
@@ -163,7 +163,7 @@
       
 
       
-
+     <!--Pie de página-->
 
       <footer id="contacto" class="piedepagina">
         <div class="container-fluid">
@@ -196,7 +196,7 @@
             </div>        
   
             <div class="col-12 copy">
-              <h4>Copyright &copy; 2022  -  Página creada por *nombre de integrantes* - Todos los derechos reservados</h4>
+              <h4>Copyright &copy; 2022  -  Página creada por Orlando Altamiranda | Elizabett Fernandez | Gabriel Smythe | Janet Santi - Todos los derechos reservados</h4>
             </div>
   
           </div>

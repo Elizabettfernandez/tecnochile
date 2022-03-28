@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&family=Russo+One&family=Secular+One&display=swap");
 .nav-link {
   color: white !important;
 }
@@ -20,6 +21,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  text-align: center;
 }
 
 .contacto h4 {
@@ -29,9 +31,8 @@
 }
 
 .contacto a {
-  margin: 1 20px;
   color: white;
-  padding: 10px 0px 0px 40px;
+  padding: 10px 40px 0px 40px;
 }
 
 .contacto a:hover {
@@ -64,14 +65,17 @@
   color: #c8a155;
 }
 
+.ubi {
+  text-align: center;
+}
+
 .ubi h4 {
   font-weight: bold;
-  text-align: center;
   color: #d9d9c9;
 }
 
 .ubi a {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "IBM Plex Sans", sans-serif;
   color: white;
 }
 
@@ -86,33 +90,45 @@
 .copy h4 {
   color: white;
   text-align: center;
-  font-size: 10px;
+  font-size: 12px;
   margin-top: 5px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
 }
 
 /*Producto: todo para tu PC*/
 .producto__subtitle {
   text-align: center;
-  padding-top: 130px;
+  padding-top: 100px;
+  font-family: "Secular One", sans-serif;
+  font-size: 27px;
 }
 
 .producto__maintitle {
   text-align: center;
   padding-bottom: 70px;
+  font-family: "Russo One", sans-serif;
+  font-size: 54px;
 }
 
-.ubi img {
-  width: 900px;
-  height: 556px;
+.disco-duro img {
+  width: 100%;
+  height: auto;
+}
+
+.descripcion__precio {
+  font-family: "Secular One", sans-serif;
+}
+
+.descripcion__texto {
+  font-family: "IBM Plex Sans", sans-serif;
 }
 
 /*Marcas*/
-h2.marcas__title {
+.marcas__title {
   text-align: center;
-  padding-top: 130px;
+  padding-top: 100px;
   padding-bottom: 60px;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Russo One", sans-serif;
 }
 
 .row {
@@ -121,8 +137,20 @@ h2.marcas__title {
           justify-content: space-evenly;
 }
 
+.card-title {
+  font-family: "Secular One", sans-serif;
+}
+
+.card-text {
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
 /*Tablet*/
 @media only screen and (max-width: 1000px) {
+  .disco-duro img {
+    width: 100%;
+    height: auto;
+  }
   /*pie de página*/
   .redes-sociales {
     margin: 0 50px;
@@ -130,6 +158,9 @@ h2.marcas__title {
   .contacto {
     text-align: center;
     padding-bottom: 15px;
+  }
+  .contacto a {
+    padding: 10px 0px 0px 5px;
   }
   .ubi {
     margin-bottom: 10px;
@@ -142,21 +173,34 @@ h2.marcas__title {
   .producto__subtitle {
     text-align: center;
     padding-top: 25px;
+    font-size: 12px;
   }
   .producto__maintitle {
     text-align: center;
-    padding-bottom: 35px;
+    padding-bottom: 18px;
+    font-size: 30px;
   }
-  .ubi img {
-    width: 321px;
-    height: 254px;
+  .disco-duro img {
+    padding: 0px 0px 25px 68px;
+    width: 100%;
+    height: auto;
+  }
+  .descripcion__producto {
+    font-size: 20px;
+    text-align: center;
+  }
+  .descripcion__precio {
+    font-size: 15px;
+  }
+  .descripcion__texto {
+    font-size: 15px;
+    text-align: justify;
   }
   /*Marcas*/
-  h2.marcas__title {
+  .marcas__title {
     text-align: center;
     padding-top: 70px;
     padding-bottom: 35px;
-    font-family: 'Courier New', Courier, monospace;
   }
   /*pie de página*/
   .ubi {
