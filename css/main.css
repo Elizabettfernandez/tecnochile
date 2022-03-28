@@ -1,0 +1,180 @@
+@charset "UTF-8";
+.nav-link {
+  color: white !important;
+}
+
+.navbar-brand img {
+  max-width: 100%;
+}
+
+.piedepagina {
+  background-color: #1d0b41;
+  padding-top: 30px;
+}
+
+.contacto {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contacto h4 {
+  margin: 0 35px;
+  font-weight: bold;
+  color: #d9d9c9;
+}
+
+.contacto a {
+  margin: 1 20px;
+  color: white;
+  padding: 10px 0px 0px 40px;
+}
+
+.contacto a:hover {
+  color: #c8a155;
+}
+
+.comparte {
+  text-align: center;
+  font-weight: bold;
+  color: #d9d9c9;
+}
+
+.redes-sociales {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 0 126px;
+  margin-top: 17px;
+  margin-bottom: 10px;
+}
+
+.redes-sociales a {
+  font-size: 15px;
+  color: white;
+}
+
+.redes-sociales a:hover {
+  color: #c8a155;
+}
+
+.ubi h4 {
+  font-weight: bold;
+  text-align: center;
+  color: #d9d9c9;
+}
+
+.ubi a {
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+}
+
+.ubi a:hover {
+  color: #c8a155;
+}
+
+.copy {
+  background-color: #262626;
+}
+
+.copy h4 {
+  color: white;
+  text-align: center;
+  font-size: 10px;
+  margin-top: 5px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/*Producto: todo para tu PC*/
+.producto__subtitle {
+  text-align: center;
+  padding-top: 130px;
+}
+
+.producto__maintitle {
+  text-align: center;
+  padding-bottom: 70px;
+}
+
+.ubi img {
+  width: 900px;
+  height: 556px;
+}
+
+/*Marcas*/
+h2.marcas__title {
+  text-align: center;
+  padding-top: 130px;
+  padding-bottom: 60px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.row {
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+/*Tablet*/
+@media only screen and (max-width: 1000px) {
+  /*pie de página*/
+  .redes-sociales {
+    margin: 0 50px;
+  }
+  .contacto {
+    text-align: center;
+    padding-bottom: 15px;
+  }
+  .ubi {
+    margin-bottom: 10px;
+  }
+}
+
+/*Móvil*/
+@media only screen and (max-width: 600px) {
+  /*Producto: todo para tu PC*/
+  .producto__subtitle {
+    text-align: center;
+    padding-top: 25px;
+  }
+  .producto__maintitle {
+    text-align: center;
+    padding-bottom: 35px;
+  }
+  .ubi img {
+    width: 321px;
+    height: 254px;
+  }
+  /*Marcas*/
+  h2.marcas__title {
+    text-align: center;
+    padding-top: 70px;
+    padding-bottom: 35px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  /*pie de página*/
+  .ubi {
+    text-align: center;
+    padding-bottom: 10px;
+  }
+  .contacto {
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .contacto a {
+    padding: 10px 0px 0px 5px;
+  }
+}
+
+.row {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+/*# sourceMappingURL=main.css.map */

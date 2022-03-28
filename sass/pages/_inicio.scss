@@ -1,0 +1,108 @@
+
+
+/*Producto: todo para tu PC*/
+
+.producto__subtitle {
+    text-align: center;
+    padding-top: 130px;
+    
+}
+
+.producto__maintitle {
+    text-align: center;
+    padding-bottom: 70px;
+}
+
+.ubi img {
+    width: 900px;
+    height: 556px;
+}
+
+
+
+
+
+
+/*Marcas*/
+
+h2.marcas__title {
+    text-align: center;
+    padding-top: 130px;
+    padding-bottom: 60px;
+    font-family:'Courier New', Courier, monospace;
+  }
+
+.row {
+    justify-content: space-evenly;
+  }
+
+
+/*Tablet*/
+@media only screen and (max-width: 1000px){
+
+    /*pie de página*/
+      .redes-sociales{
+        margin: 0 50px;
+     }
+    
+      .contacto {
+        text-align: center;
+        padding-bottom: 15px;
+     }
+    
+      .ubi {
+        margin-bottom: 10px;
+     }
+    
+    }
+    
+    /*Móvil*/
+    @media only screen and (max-width: 600px){
+
+    /*Producto: todo para tu PC*/
+
+        .producto__subtitle {
+            text-align: center;
+            padding-top: 25px;
+            
+        }
+        
+        .producto__maintitle {
+            text-align: center;
+            padding-bottom: 35px;
+        }
+        
+        .ubi img {
+            width: 321px;
+            height: 254px;
+        }
+
+    /*Marcas*/
+
+    h2.marcas__title {
+    text-align: center;
+    padding-top: 70px;
+    padding-bottom: 35px;
+    font-family:'Courier New', Courier, monospace;
+  }
+
+    /*pie de página*/
+    
+      .ubi {
+        text-align: center;
+        padding-bottom: 10px;
+     }
+    
+      .contacto {
+        text-align: center;
+        padding-top: 15px;
+        padding-bottom: 15px;
+
+        & a {
+            padding: 10px 0px 0px 5px;
+        }
+    
+     }
+    
+    
+    }
