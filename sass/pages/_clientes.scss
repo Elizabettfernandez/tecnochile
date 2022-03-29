@@ -1,9 +1,14 @@
-.row {
-    justify-content: space-around;
-    padding: 50px 20px;
+div.seccionClientes.row.espacio{
+    margin: 0px 12px 20px;
 }
 
-h2 {
+.espacio {
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.clientes-titulo {
+    font-family: $titulo;
     font-size: 30px;
     text-align: center;
     padding: 70px 50px;
@@ -13,6 +18,14 @@ h2 {
 text-align: center!important;
 align-items: baseline;
 padding: 15px 15px;
+}
+
+.card-title{
+    font-family: $subtitulos;
+}
+
+.card-text{
+    font-family: $parrafo;
 }
 
 .card  {
