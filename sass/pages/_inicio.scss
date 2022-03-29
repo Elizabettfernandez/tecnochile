@@ -3,42 +3,64 @@
 /*Producto: todo para tu PC*/
 
 .producto__subtitle {
-    text-align: center;
-    padding-top: 130px;
-    
+  text-align: center;
+  padding-top: 100px;
+  font-family: $subtitulos;
+  font-size: 27px;  
 }
 
 .producto__maintitle {
-    text-align: center;
-    padding-bottom: 70px;
-}
-
-.ubi img {
-    width: 900px;
-    height: 556px;
+  text-align: center;
+  padding-bottom: 70px;
+  font-family:$titulo ;
+  font-size: 54px;
 }
 
 
+.disco-duro img {
+  width: 100%;
+  height: auto;
+}
 
+.descripcion__precio{
+  font-family: $subtitulos;
+}
 
+.descripcion__texto{
+  font-family: $parrafo;
+}
 
 
 /*Marcas*/
 
-h2.marcas__title {
-    text-align: center;
-    padding-top: 130px;
-    padding-bottom: 60px;
-    font-family:'Courier New', Courier, monospace;
-  }
+.marcas__title {
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 60px;
+  font-family:$titulo;
+}
 
 .row {
-    justify-content: space-evenly;
-  }
+  justify-content: space-evenly;
+}
+
+.card-title{
+  font-family: $subtitulos;
+}
+
+.card-text {
+  font-family: $parrafo;
+}
 
 
 /*Tablet*/
 @media only screen and (max-width: 1000px){
+
+
+  .disco-duro img {
+    width: 100%;
+    height: auto;
+  }
 
     /*pie de página*/
       .redes-sociales{
@@ -48,6 +70,12 @@ h2.marcas__title {
       .contacto {
         text-align: center;
         padding-bottom: 15px;
+
+          & a {
+              padding: 10px 0px 0px 5px;
+          }
+      
+       
      }
     
       .ubi {
@@ -64,26 +92,42 @@ h2.marcas__title {
         .producto__subtitle {
             text-align: center;
             padding-top: 25px;
+            font-size: 12px;
             
         }
         
         .producto__maintitle {
             text-align: center;
-            padding-bottom: 35px;
+            padding-bottom: 18px;
+            font-size: 30px;
         }
         
-        .ubi img {
-            width: 321px;
-            height: 254px;
+        .disco-duro img {
+          padding: 0px 0px 25px 68px;
+          width: 100%;
+          height: auto;
+        }
+
+        .descripcion__producto {
+          font-size: 20px;
+          text-align: center;
+        }
+
+        .descripcion__precio {
+          font-size: 15px;
+        }
+
+        .descripcion__texto{
+          font-size: 15px;
+          text-align: justify;
         }
 
     /*Marcas*/
 
-    h2.marcas__title {
+    .marcas__title {
     text-align: center;
     padding-top: 70px;
     padding-bottom: 35px;
-    font-family:'Courier New', Courier, monospace;
   }
 
     /*pie de página*/

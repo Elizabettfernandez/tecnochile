@@ -1,2 +1,228 @@
+<<<<<<< HEAD
 .nav-link{color:white !important}.navbar-brand img{max-width:100%}.piedepagina{background-color:#1d0b41;padding-top:30px}.contacto{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}.contacto h4{margin:0 35px;font-weight:bold;color:#d9d9c9}.contacto a{margin:1 20px;color:white;padding:10px 0px 0px 40px}.contacto a:hover{color:#c8a155}.comparte{text-align:center;font-weight:bold;color:#d9d9c9}.redes-sociales{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-pack:distribute;justify-content:space-around;margin:0 126px;margin-top:17px;margin-bottom:10px}.redes-sociales a{font-size:15px;color:white}.redes-sociales a:hover{color:#c8a155}.ubi h4{font-weight:bold;text-align:center;color:#d9d9c9}.ubi a{font-family:'Courier New', Courier, monospace;color:white}.ubi a:hover{color:#c8a155}.copy{background-color:#262626}.copy h4{color:white;text-align:center;font-size:10px;margin-top:5px;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif}.producto__subtitle{text-align:center;padding-top:130px}.producto__maintitle{text-align:center;padding-bottom:70px}.ubi img{width:900px;height:556px}h2.marcas__title{text-align:center;padding-top:130px;padding-bottom:60px;font-family:'Courier New', Courier, monospace}.row{-webkit-box-pack:space-evenly;-ms-flex-pack:space-evenly;justify-content:space-evenly}@media only screen and (max-width: 1000px){.redes-sociales{margin:0 50px}.contacto{text-align:center;padding-bottom:15px}.ubi{margin-bottom:10px}}@media only screen and (max-width: 600px){.producto__subtitle{text-align:center;padding-top:25px}.producto__maintitle{text-align:center;padding-bottom:35px}.ubi img{width:321px;height:254px}h2.marcas__title{text-align:center;padding-top:70px;padding-bottom:35px;font-family:'Courier New', Courier, monospace}.ubi{text-align:center;padding-bottom:10px}.contacto{text-align:center;padding-top:15px;padding-bottom:15px}.contacto a{padding:10px 0px 0px 5px}}.row{-ms-flex-pack:distribute;justify-content:space-around;padding:50px 20px}h2{font-size:30px;text-align:center;padding:70px 50px}.card-body{text-align:center !important;-webkit-box-align:baseline;-ms-flex-align:baseline;align-items:baseline;padding:15px 15px}.card{padding:25px 25px;text-align:center}.imgtarjeta{width:180px;height:180px;margin:auto}
+=======
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&family=Russo+One&family=Secular+One&display=swap");
+.nav-link {
+  color: white !important;
+}
+
+.navbar-brand img {
+  max-width: 100%;
+}
+
+.piedepagina {
+  background-color: #1d0b41;
+  padding-top: 30px;
+}
+
+.contacto {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+.contacto h4 {
+  margin: 0 35px;
+  font-weight: bold;
+  color: #d9d9c9;
+}
+
+.contacto a {
+  color: white;
+  padding: 10px 40px 0px 40px;
+}
+
+.contacto a:hover {
+  color: #c8a155;
+}
+
+.comparte {
+  text-align: center;
+  font-weight: bold;
+  color: #d9d9c9;
+}
+
+.redes-sociales {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 0 126px;
+  margin-top: 17px;
+  margin-bottom: 10px;
+}
+
+.redes-sociales a {
+  font-size: 15px;
+  color: white;
+}
+
+.redes-sociales a:hover {
+  color: #c8a155;
+}
+
+.ubi {
+  text-align: center;
+}
+
+.ubi h4 {
+  font-weight: bold;
+  color: #d9d9c9;
+}
+
+.ubi a {
+  font-family: "IBM Plex Sans", sans-serif;
+  color: white;
+}
+
+.ubi a:hover {
+  color: #c8a155;
+}
+
+.copy {
+  background-color: #262626;
+}
+
+.copy h4 {
+  color: white;
+  text-align: center;
+  font-size: 12px;
+  margin-top: 5px;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+/*Producto: todo para tu PC*/
+.producto__subtitle {
+  text-align: center;
+  padding-top: 100px;
+  font-family: "Secular One", sans-serif;
+  font-size: 27px;
+}
+
+.producto__maintitle {
+  text-align: center;
+  padding-bottom: 70px;
+  font-family: "Russo One", sans-serif;
+  font-size: 54px;
+}
+
+.disco-duro img {
+  width: 100%;
+  height: auto;
+}
+
+.descripcion__precio {
+  font-family: "Secular One", sans-serif;
+}
+
+.descripcion__texto {
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+/*Marcas*/
+.marcas__title {
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 60px;
+  font-family: "Russo One", sans-serif;
+}
+
+.row {
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.card-title {
+  font-family: "Secular One", sans-serif;
+}
+
+.card-text {
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+/*Tablet*/
+@media only screen and (max-width: 1000px) {
+  .disco-duro img {
+    width: 100%;
+    height: auto;
+  }
+  /*pie de página*/
+  .redes-sociales {
+    margin: 0 50px;
+  }
+  .contacto {
+    text-align: center;
+    padding-bottom: 15px;
+  }
+  .contacto a {
+    padding: 10px 0px 0px 5px;
+  }
+  .ubi {
+    margin-bottom: 10px;
+  }
+}
+
+/*Móvil*/
+@media only screen and (max-width: 600px) {
+  /*Producto: todo para tu PC*/
+  .producto__subtitle {
+    text-align: center;
+    padding-top: 25px;
+    font-size: 12px;
+  }
+  .producto__maintitle {
+    text-align: center;
+    padding-bottom: 18px;
+    font-size: 30px;
+  }
+  .disco-duro img {
+    padding: 0px 0px 25px 68px;
+    width: 100%;
+    height: auto;
+  }
+  .descripcion__producto {
+    font-size: 20px;
+    text-align: center;
+  }
+  .descripcion__precio {
+    font-size: 15px;
+  }
+  .descripcion__texto {
+    font-size: 15px;
+    text-align: justify;
+  }
+  /*Marcas*/
+  .marcas__title {
+    text-align: center;
+    padding-top: 70px;
+    padding-bottom: 35px;
+  }
+  /*pie de página*/
+  .ubi {
+    text-align: center;
+    padding-bottom: 10px;
+  }
+  .contacto {
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .contacto a {
+    padding: 10px 0px 0px 5px;
+  }
+}
+
+.row {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+>>>>>>> afa0a9705b31c707ccbb47df100ef3a91c84ffa2
 /*# sourceMappingURL=main.css.map */
