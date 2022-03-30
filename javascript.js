@@ -13,9 +13,6 @@ function myFunction() {
     //contador
     
     let numero = 0;
-function contador() {
-    
-    }
     function sumar(){
         ++numero;
         console.log(numero);
