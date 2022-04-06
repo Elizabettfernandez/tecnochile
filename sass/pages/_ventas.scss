@@ -1,0 +1,64 @@
+.centrado{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.titulo-ventas{
+    text-align: center;
+    margin-top: 30px;
+    font-family: $titulo;
+    font-size: 20px;
+    
+}
+
+.botones{
+    display: flex;
+    justify-content:center;
+    width: 100%;
+    
+    & button{
+        background-color: #1d0b41;
+        color: #ffffff;
+        margin: 30px;
+        margin-top: 10px;
+    }
+    button:hover{
+        background-color:beige;
+        color: #1d0b41;
+    }
+}
+
+.boton-estatico{   
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  outline: none;
+}
+
+/*Móvil*/
+@media only screen and (max-width: 600px){
+
+    .titulo-ventas{
+        margin-top: 30px;
+        font-size: 20px;
+    }
+
+    .botones{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        margin-top: 10px;
+        
+
+        & button{
+            margin: 6px;
+            padding: 5px;
+            margin-left: 70px;
+            margin-right: 70px;
+                   
+        } 
+    }
+}

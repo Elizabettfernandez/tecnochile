@@ -10,83 +10,178 @@
     <!--css bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
-<body onload="lista()">
-
+<body onload="lista(productos)">
   <header class="sticky-top">
     <nav class="navbar navbar-expand-lg navbar-dark piedepagina">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="inicio.html"><img src="img/logo.PNG" alt=""></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="inicio.html"
+          ><img src="img/logo.PNG" alt=""
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="inicio.html"
+                >Inicio</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="clientes.html">Clientes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="inicio.html#marcas">Marcas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="inicio.html#productos">Productos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ventas.html">Ventas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="figma.html">Flujograma</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contador.html">Contador</a>
+            </li>
+          </ul>
+          <button
+            onclick="listaCarrito(carrito)"
+            type="button"
+            class="btn btn-outline-info btn-lg boton-nav"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            Ver tu carrito
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="inicio.html">Inicio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="clientes.html">Clientes</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="inicio.html#marcas">Marcas</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="inicio.html#productos">Productos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="ventas.html">Ventas</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="figma.html">Flujograma</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contador.html">Contador</a>
-              </li>
-            </ul>
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Buscar</button>
-            </form>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button>
+          
+          <!--<form class="d-flex">
+            <input 
+              
+              class="form-control me-2"
+              type="search"
+              placeholder="Buscar Producto"
+              aria-label="Search"
+            />
+            
+            <button class="btn btn-outline-success" type="submit" >
+              Buscar
+            </button>
+          </form>-->
+        </div>
+      </div>
+    </nav>
+
+  </header>
+
+  <button
+            onclick="listaCarrito(carrito)"
+            type="button"
+            class="btn btn-primary boton-estatico"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            Ver tu carrito
+          </button>
+
+  <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Tu carrito</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body row" id="modal" > ingresa productos en tu carrito</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Vaciar carrito
+            </button>
+            <button type="button" class="btn btn-primary">
+              Comprar
+            </button>
           </div>
         </div>
-      </nav>
-</header>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Carrito</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
-  </div>
-</div>
 
-<section id="lista" class="row m-5">
-</section>
-
-<footer id="contacto" class="piedepagina">
     <div class="container-fluid">
       <div class="row d-flex">
 
+        <div class="col-xs-12 col-sm-12">
+          <div class="centrado">
+            <input id="busqueda" type="search" placeholder="Busca un Producto" aria-label="Search">
+            <button onclick="buscarProducto()" class="btn btn-outline-success" type="submit">Buscar</button>
+          </div>
+          
+        </div>
+
+        <div class="col-xs-12 col-sm-12">
+
+          <h4 class="titulo-ventas">Filtrar por:</h4>
+
+          <div class="botones">
+            <button class="item-button btn "  onclick="lista(productos)">Todos los Productos</button>
+
+            <button class="item-button btn " onclick="precioMenor()">Precio Menor a $250</button>
+
+            <button class="item-button btn " onclick="precioMayor()">Precio Mayor a $250</button>
+          </div>
+        </div>
         
+      </div>
+    </div>
+
+
+
+
+  <section id="lista" class="row m-5">
+
+
+  </section>
+
+ 
+
+
+
+
+
+
+
+  <footer id="contacto" class="piedepagina">
+    <div class="container-fluid">
+      <div class="row d-flex">
         <div class="col-xs-12 col-sm-4">
           <div class="ubi">
             <h4>Encuéntranos en:</h4>
-            <a href=""><i class="fa-solid fa-location-dot"></i>   
-            Mall Marina Arauco (1er Nivel) | Av. Libertad 1348 Modulo A-73 , Viña del Mar, Valparaíso, Chile</a> 
+            <a href=""
+              ><i class="fa-solid fa-location-dot"></i> Mall Marina Arauco
+              (1er Nivel) | Av. Libertad 1348 Modulo A-73 , Viña del Mar,
+              Valparaíso, Chile</a
+            >
           </div>
         </div>
 
@@ -97,30 +192,45 @@
             <a href=""><i class="fa-brands fa-facebook"></i></a>
             <a href=""><i class="fa-brands fa-twitter"></i></a>
           </div>
-        </div>   
-
-        <div class="col-xs-12 col-sm-4"> 
-          <div class="contacto">
-            <h4>Contáctanos</h4>
-            <a href=""><i class="fa-brands fa-whatsapp"></i>     +56 9 1234567</a>
-            <a href=""><i class="fa-solid fa-envelope"></i>  tecnochile@gmail.com</a>
-          </div>                       
-        </div>        
-
-        <div class="col-12 copy">
-          <h4>Copyright &copy; 2022  -  Página creada por Orlando Altamiranda | Elizabett Fernandez | Gabriel Smythe | Janet Santi - Todos los derechos reservados</h4>
         </div>
 
+        <div class="col-xs-12 col-sm-4">
+          <div class="contacto">
+            <h4>Contáctanos</h4>
+            <a href=""><i class="fa-brands fa-whatsapp"></i> +56 9 1234567</a>
+            <a href=""
+              ><i class="fa-solid fa-envelope"></i> tecnochile@gmail.com</a
+            >
+          </div>
+        </div>
+
+        <div class="col-12 copy">
+          <h4>
+            Copyright &copy; 2022 - Página creada por Orlando Altamiranda |
+            Elizabett Fernandez | Gabriel Smythe | Janet Santi - Todos los
+            derechos reservados
+          </h4>
+        </div>
       </div>
     </div>
-</footer>
+  </footer>
 
-
-<script src="https://kit.fontawesome.com/ee19aaa67d.js" crossorigin="anonymous"></script>
-<!--script bootstrap-->
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-<!--js local-->
-<script src="javascript.js"></script>
+  <script
+    src="https://kit.fontawesome.com/ee19aaa67d.js"
+    crossorigin="anonymous"
+  ></script>
+  <!--script bootstrap-->
+  <script
+    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+    crossorigin="anonymous"
+  ></script>
+  <!--js local-->
+  <script src="javascript.js"></script>
 </body>
 </html>
