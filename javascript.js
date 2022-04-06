@@ -70,44 +70,162 @@ let productos = [
 ]
   
 
+let carrito=[]
+
 const container = document.getElementById('lista');
 
 
-function lista() {
-    productos.forEach(function(producto, indice) {
+function lista(productos) {
+
+    container.innerHTML="";
+
+    productos.forEach(function(producto) {
 
         const card = document.createElement('div');
         card.classList = 'card-body';
-        const content = `<div class="card" style="width: 18rem;">
-        <img src="${producto.url}" class="card-img-top" alt="...">
-        <div class="card-body">
+        const content = `<div class="card " style="width: 18rem;">
+        <img class="card-img-top" src="${producto.url}"  alt="...">
+        <div class="card-body ">
           <h5 class="card-title"> ${producto.nombre}</h5>
           <p class="card-text">$ ${producto.precio}</p>
-          <a href="#" class="btn btn-primary">Agregar al carrito</a>
+          <a href="#" class="card-button btn btn-primary" onclick="addToCartClicked(${producto.id})">Agregar al carrito</a>
         </div>
       </div>`;
       container.innerHTML += content;
 
+    }
+    ) 
+};
 
-        // console.log(producto.nombre);
-        // document.write(``)
+function precioMenor() {
+
+    container.innerHTML="";
+
+    const filtrarProductos = productos.filter(producto => {
+        return producto.precio < 300
+    })
+
+
+    filtrarProductos.forEach(function(producto) {
+
+        const card = document.createElement('div');
+        card.classList = 'card-body';
+        const content = `<div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="${producto.url}"  alt="...">
+        <div class="card-body">
+          <h5 class="card-title"> ${producto.nombre}</h5>
+          <p class="card-text">$ ${producto.precio}</p>
+          <a href="#" class="card-button btn btn-primary" onclick="addToCartClicked(${producto.id})">Agregar al carrito</a>
+        </div>
+      </div>`;
+      container.innerHTML += content;
 
     }
-
-    )
-    
+    ) 
 };
-  
+
+function precioMayor() {
+
+    container.innerHTML="";
+
+    const filtrarProductos = productos.filter(producto => {
+        return producto.precio >= 300
+    })
+
+
+    filtrarProductos.forEach(function(producto) {
+
+        const card = document.createElement('div');
+        card.classList = 'card-body';
+        const content = `<div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="${producto.url}"  alt="...">
+        <div class="card-body">
+          <h5 class="card-title"> ${producto.nombre}</h5>
+          <p class="card-text">$ ${producto.precio}</p>
+          <a href="#" class="card-button btn btn-primary" onclick="addToCartClicked(${producto.id})">Agregar al carrito</a>
+        </div>
+      </div>`;
+      container.innerHTML += content;
+
+    }
+    ) 
+};
+
+
+function buscarProducto() {
+
+    container.innerHTML = ""
+    const buscarProducto = document.getElementById("busqueda").value;
+    
+    const nombreProducto = buscarProducto.toLowerCase();
+    
+
+    const filtrarProductos = productos.filter(producto => {
+        const nuevoNombre = producto.nombre
+        const transformarNombre = nuevoNombre.toLowerCase();
+        console.log(transformarNombre)
+        
+        return transformarNombre == "" ?  lista(productos) : transformarNombre.includes(nombreProducto);
+
+    })
+ 
+    filtrarProductos.forEach(function(producto) {
+
+        const card = document.createElement('div');
+        card.classList = 'card-body';
+        const content = `<div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="${producto.url}"  alt="...">
+        <div class="card-body">
+          <h5 class="card-title"> ${producto.nombre}</h5>
+          <p class="card-text">$ ${producto.precio}</p>
+          <a href="#" class="card-button btn btn-primary" onclick="addToCartClicked(${producto.id})">Agregar al carrito</a>
+        </div>
+      </div>`;
+      container.innerHTML += content;
+
+    }
+    ) 
+
+}
 
   
+const addToShoppingCartButtons = document.querySelectorAll('.card-button');
+console.log(addToShoppingCartButtons)
 
 
-//   funct {
-  
-  
-//     document.write for each ( 
-//       elemento, posicion
-//     )
-  
-//     document write. " <td> ${elmento[posicion]} - ${precio[posicion]}</td>
-//   }
+
+function addToCartClicked(params){ 
+   
+    const producto= productos.find(item=>item.id==params);
+    const boolean= carrito.some(item=>item.id==params);
+    if (boolean){
+        console.log("el producto ya existe")
+    }else{
+        carrito.push(producto);
+
+        
+    }
+}
+
+
+const modal= document.getElementById('modal');
+
+function listaCarrito(carrito){
+
+    modal.innerHTML="";
+    
+    carrito.forEach(function(producto) {
+
+        const card = document.createElement('div');
+        card.classList = 'card-body';
+        const content = `<div class="card" style="width: 10rem;">
+        <img class="card-img-top" style="width: 7rem;"  src="${producto.url}"  alt="...">
+        <div class="card-body" style="width: 7rem;">
+          <h5 class="card-title"> ${producto.nombre}</h5>
+          <p class="card-text">$ ${producto.precio}</p>
+          <a href="#" class="card-button btn btn-danger" onclick="addToCartClicked(${producto.id})">X</a>
+        </div>
+      </div>`;
+      modal.innerHTML += content;
+    })    
+}
