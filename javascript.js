@@ -42,28 +42,28 @@ let productos = [
         id: 1,
         nombre: "Reloj",
         precio: 300,
-        cantidad: 10,
+        cantidad: 1,
         url: "https://www.bikeinn.com/l/13700/137007516/polar-reloj-vantage-m.jpg"
     },
     {
         id: 2,
         nombre: "Audifonos Caros",
         precio: 200,
-        cantidad: 50,
+        cantidad: 1,
         url: "https://juntozstgsrvproduction.blob.core.windows.net/default-blob-images/200x200_1_%2089894.jpg?w=200&h=200"
     },
     {
         id: 3,
         nombre: "Audifonos Baratos",
         precio: 100,
-        cantidad: 20,
+        cantidad: 1,
         url: "https://falabella.scene7.com/is/image/Falabella/11360581?qlt=80&wid=200&hei=200"
     },
     {
         id: 4,
         nombre: "Silla",
         precio: 400,
-        cantidad: 5,
+        cantidad: 1,
         url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiSJlNNggTYpG7RPejQ-6ewQ_yVCOqhVwT_frSStKin40I5z3HBIeIHuALt_a1r4RHZts&usqp=CAU"
     },
     
@@ -72,12 +72,13 @@ let productos = [
 
 let carrito=[]
 
-const container = document.getElementById('lista');
 
+
+const cardProductos = document.getElementById('lista');
 
 function lista(productos) {
 
-    container.innerHTML="";
+    cardProductos.innerHTML="";
 
     productos.forEach(function(producto) {
 
@@ -91,15 +92,18 @@ function lista(productos) {
           <a href="#" class="card-button btn btn-primary" onclick="addToCartClicked(${producto.id})">Agregar al carrito</a>
         </div>
       </div>`;
-      container.innerHTML += content;
+      cardProductos.innerHTML += content;
 
     }
     ) 
 };
 
+
+//SECCIÓN FILTROS
+
 function precioMenor() {
 
-    container.innerHTML="";
+    cardProductos.innerHTML="";
 
     const filtrarProductos = productos.filter(producto => {
         return producto.precio < 300
@@ -118,7 +122,7 @@ function precioMenor() {
           <a href="#" class="card-button btn btn-primary" onclick="addToCartClicked(${producto.id})">Agregar al carrito</a>
         </div>
       </div>`;
-      container.innerHTML += content;
+      cardProductos.innerHTML += content;
 
     }
     ) 
@@ -126,7 +130,7 @@ function precioMenor() {
 
 function precioMayor() {
 
-    container.innerHTML="";
+    cardProductos.innerHTML="";
 
     const filtrarProductos = productos.filter(producto => {
         return producto.precio >= 300
@@ -145,7 +149,7 @@ function precioMayor() {
           <a href="#" class="card-button btn btn-primary" onclick="addToCartClicked(${producto.id})">Agregar al carrito</a>
         </div>
       </div>`;
-      container.innerHTML += content;
+      cardProductos.innerHTML += content;
 
     }
     ) 
@@ -154,7 +158,7 @@ function precioMayor() {
 
 function buscarProducto() {
 
-    container.innerHTML = ""
+    cardProductos.innerHTML = ""
     const buscarProducto = document.getElementById("busqueda").value;
     
     const nombreProducto = buscarProducto.toLowerCase();
@@ -181,33 +185,59 @@ function buscarProducto() {
           <a href="#" class="card-button btn btn-primary" onclick="addToCartClicked(${producto.id})">Agregar al carrito</a>
         </div>
       </div>`;
-      container.innerHTML += content;
+      cardProductos.innerHTML += content;
 
     }
     ) 
 
 }
 
-  
+
+//SECCIÓN CARRITO
+
+
+//función botón aumentar productos + y agregar productos al carrito al presionar el botón "agregar al carrito"
 const addToShoppingCartButtons = document.querySelectorAll('.card-button');
 console.log(addToShoppingCartButtons)
-
-
 
 function addToCartClicked(params){ 
    
     const producto= productos.find(item=>item.id==params);
+    
     const boolean= carrito.some(item=>item.id==params);
     if (boolean){
-        console.log("el producto ya existe")
-    }else{
-        carrito.push(producto);
+        producto.cantidad += 1;
+        listaCarrito(carrito);
 
         
+    }else{
+        carrito.push(producto);
+        listaCarrito(carrito);
+  
     }
 }
 
 
+
+//función botón disminuír - productos dentro del carrito
+function quitToCartClicked(params){ 
+    
+    const producto= productos.find(item=>item.id==params);
+    
+    const boolean= carrito.some(item=>item.id==params);
+    if (boolean){
+        producto.cantidad -= 1;
+        listaCarrito(carrito);
+
+        if(producto.cantidad<1){
+            eliminarProducto(params);
+        }
+    }
+}
+
+
+
+//función que agrega los productos al carrito e incluye los botones de disminuír, agregar y eliminar todos los productos respectivamente, + el precio total
 const modal= document.getElementById('modal');
 
 function listaCarrito(carrito){
@@ -222,10 +252,67 @@ function listaCarrito(carrito){
         <img class="card-img-top" style="width: 7rem;"  src="${producto.url}"  alt="...">
         <div class="card-body" style="width: 7rem;">
           <h5 class="card-title"> ${producto.nombre}</h5>
+          <p class="card-text">Cantidad: ${producto.cantidad}</p>
           <p class="card-text">$ ${producto.precio}</p>
-          <a href="#" class="card-button btn btn-danger" onclick="addToCartClicked(${producto.id})">X</a>
+          <a href="#" class="card-button btn btn-secondary" onclick="quitToCartClicked(${producto.id})">-</a>
+          <a href="#" class="card-button btn btn-success" onclick="addToCartClicked(${producto.id})">+</a>
+          <a href="#" class="card-button btn btn-danger" onclick="eliminarProducto(${producto.id})">x</a>
+          
         </div>
       </div>`;
       modal.innerHTML += content;
-    })    
+
+    }) 
+    totalCarrito();
 }
+
+
+
+//botón X para eliminar un producto completamente
+function eliminarProducto(params){
+    const index = carrito.findIndex( (element) => element.id == params);
+    carrito.splice(index, 1);
+    listaCarrito(carrito);
+
+}
+
+
+
+//botón "vaciar carrito" para eliminar todos los productos del carrito
+function vaciarCarrito(){
+
+    carrito=[];
+    modal.innerHTML="su carrito fue vaciado";
+    totalCarrito();
+}
+
+
+
+//suma total del precio de carrito
+const total = document.getElementById('total');
+
+function totalCarrito(){
+
+    total.innerHTML="";
+
+    let sumatoria= 0;
+
+    for (i=0; i<carrito.length; i++){
+        sumatoria += carrito[i].precio*carrito[i].cantidad;
+    }
+
+    const precioTotal = (`Total de tu compra: $${sumatoria}`);
+
+    total.innerHTML += precioTotal;
+    timbre();
+}
+
+
+
+//función para timbre
+/*function timbre(){
+    const music = new Audio('img/ding_dong_no_hay_nadie.mp3');
+    music.play();
+    music.loop =false;
+
+}*/
