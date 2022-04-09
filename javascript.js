@@ -250,20 +250,40 @@ function listaCarrito(carrito){
 
         const card = document.createElement('div');
         card.classList = 'card-body';
-        const content = `<div class="card" style="width: 10rem;">
-            <img class="card-img-top" style="width: 7rem;"  src="${producto.url}"  alt="...">
-            <div class="card-body" style="width: 7rem;">
-            <h5 class="card-title"> ${producto.nombre}</h5>
-            <p class="card-text">Cantidad: ${producto.cantidad}</p>
-            <p class="card-text">$ ${producto.precio}</p>
+        // const content = `<div class="card" style="width: 10rem;">
+        //     <img class="card-img-top" style="width: 7rem;"  src="${producto.url}"  alt="...">
+        //     <div class="card-body" style="width: 7rem;">
+        //     <h5 class="card-title"> ${producto.nombre}</h5>
+        //     <p class="card-text">Cantidad: ${producto.cantidad}</p>
+        //     <p class="card-text">$ ${producto.precio}</p>
 
-            <div class="btn-group" role="group" aria-label="Basic example">
-                <a href="#" class="card-button btn btn-secondary" onclick="quitToCartClicked(${producto.id})">-</a>
-                <a href="#" class="card-button btn btn-success" onclick="addToCartClicked(${producto.id})">+</a>
-                <a href="#" class="card-button btn btn-danger" onclick="eliminarProducto(${producto.id})">x</a>
+            // <div class="btn-group" role="group" aria-label="Basic example">
+            //     <a href="#" class="card-button btn btn-secondary" onclick="quitToCartClicked(${producto.id})">-</a>
+            //     <a href="#" class="card-button btn btn-success" onclick="addToCartClicked(${producto.id})">+</a>
+            //     <a href="#" class="card-button btn btn-danger" onclick="eliminarProducto(${producto.id})">x</a>
+            // </div>
+        // </div>
+        // </div>`;
+
+        const content = `<div class="card mb-1 p-0" style="max-width: 100%;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="${producto.url}" class="img-fluid rounded-center" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">${producto.nombre}</h5>
+              <p class="card-text mb-1"><strong>Cantidad:</strong> ${producto.cantidad}</p>
+              <p class="card-text mb-2"><strong>Precio:</strong> $ ${producto.precio}</p>
+              <div class="btn-group" role="group" aria-label="Basic example">
+              <a href="#" class="card-button btn btn-secondary" onclick="quitToCartClicked(${producto.id})">-</a>
+              <a href="#" class="card-button btn btn-success" onclick="addToCartClicked(${producto.id})">+</a>
+              <a href="#" class="card-button btn btn-danger" onclick="eliminarProducto(${producto.id})">x</a>
+          </div>
             </div>
+          </div>
         </div>
-        </div>`;
+      </div>`
       modal.innerHTML += content;
 
     }) 
